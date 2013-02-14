@@ -1,0 +1,10 @@
+#!/bin/sh
+aws ec2 describe-tags \
+  --filter "Name=resource-type,Values=instance" \
+  --query "Tags[*].[ResourceId,Value]" \
+  --output table|grep 'i-' \
+| grep " $1 " \
+| perl -pe 's/\|//g' \
+| perl -pe 's/  +//g' \
+| perl -pe "s/ *$1 *//" 
+

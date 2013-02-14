@@ -1,0 +1,8 @@
+#!/bin/sh
+echo 'Usage: git-rebase-all [newbase] [upstream]'
+echo 'default newbase is "master"'
+echo 'default upstream is newbase'
+newbase=${1:-master} 
+upstream=${2:-$newbase} 
+git co $newbase && git branch --no-merged |grep -v '*'|xargs -i git rebase --onto $newbase $upstream --committer-date-is-author-date {} 
+git co $newbase

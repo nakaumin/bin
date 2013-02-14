@@ -1,0 +1,12 @@
+#!/bin/sh
+cd $1
+for dotfile in .?*
+do
+  if [ $dotfile != '..' ] && [ $dotfile != '.git' ]
+  then
+    rm "$HOME/$dotfile"
+    ln -is "$1/$dotfile" $HOME
+  fi
+done
+
+

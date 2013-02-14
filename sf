@@ -1,0 +1,10 @@
+#!/usr/bin/env ruby
+#sf.rb -- a symfony command wrapper
+require 'fileutils'
+
+until File.file?("symfony")
+  FileUtils.cd('..')
+  raise "can't find symfony project directory" if FileUtils.pwd == "/"
+end
+cmd = "./symfony " << ARGV.join(" ")
+system(cmd)
