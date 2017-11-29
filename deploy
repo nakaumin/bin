@@ -1,0 +1,12 @@
+#!/bin/sh
+
+if [ $# -eq 0 ]; then
+  if [ -f ./hosts ]; then
+    ansible-playbook deploy.yml -i hosts
+  else
+    echo 'Inventory file ./hosts not found.' 
+  fi
+else
+  SSH_USER=ubuntu
+  ansible-playbook deploy.yml -u "$SSH_USER" -i "$1", 
+fi
