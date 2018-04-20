@@ -1,0 +1,11 @@
+#!/bin/sh
+
+cd ~
+if [ -L ~/dotfiles ]; then
+  rm ~/dotfiles
+fi
+if [ -L ~/bin ]; then
+  rm ~/bin
+fi
+ln -sf dotfiles.${1} dotfiles
+ln -sf bin.${1} bin
