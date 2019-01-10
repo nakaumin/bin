@@ -1,0 +1,24 @@
+#!/bin/sh
+ctags --langmap=PHP:.php \
+  --php-kinds=cfd \
+  --languages=php \
+  --links=no \
+  --exclude=css \
+  --exclude=scss \
+  --exclude=js \
+  --exclude=web/scss \
+  --exclude=web/css \
+  --exclude=web/js \
+  --exclude=web/images \
+  --exclude=web/thumb \
+  --exclude=web/uploads \
+  --exclude=cache \
+  --exclude='data/*' \
+  --exclude=node_modules \
+  --exclude=bundle \
+  --exclude=.sass-cache \
+  --exclude=sfPropelPlugin \
+  --exclude=sfDoctrinePlugin \
+  --exclude=composer.phar \
+  --exclude=vendor \
+  -R $@
