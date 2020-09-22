@@ -1,6 +1,6 @@
 #!/bin/sh
 ctags --langmap=PHP:.php \
-  --php-kinds=cfd \
+  --php-kinds=cfdnit \
   --languages=php \
   --links=no \
   --exclude=css \
